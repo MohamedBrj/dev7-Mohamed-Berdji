@@ -15,7 +15,7 @@ import numpy as np
 # Adds a 'pop_est' column with random estimates if it is not present.
 @st.cache_data
 def load_data():
-       gdf = gpd.read_file("ne_110m_admin_0_countries.shp")
+    gdf = gpd.read_file("ne_110m_admin_0_countries.shp")
     if "pop_est" not in gdf.columns:
         if "POP_EST" in gdf.columns:      # Natural Earth stores real estimates here
             gdf["pop_est"] = gdf["POP_EST"]
